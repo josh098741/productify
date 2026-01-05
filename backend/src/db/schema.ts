@@ -55,7 +55,7 @@ export const usersRelations = relations(users, ({ many }) => ({
 
 export const productsRelations = relations(products, ({ one,many }) => ({
     comments: many(comments),
-    users: one(users, {fields: [products.userId], references: [users.id]})
+    user: one(users, {fields: [products.userId], references: [users.id]})
 }))
 
 // Comments Relations: A comment belongs to one user and one product
