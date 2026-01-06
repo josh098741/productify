@@ -109,3 +109,35 @@ export const updateProduct = async (req: Request,res: Response) => {
         res.status(500).json({ error: "Failed to update product" })
     }
 }
+
+// Delete product (Protected - owner only operation)
+export const deleteProduct = async (req: Request, res: Response) => {
+    try{
+        const { userId } = getAuth(req)
+        if(!userId) return res.status(401).json({ error: "Unauthorized" })
+
+        const {id} = req.params
+
+        const existingProduct = await queries.getProductById(id)
+        if(!existingProduct){
+            res.status(404).json({ error: "Product not found" })
+            return
+        }
+
+        if(existingProduct.userId !== userId){
+            res.status(403).json({
+                error: "You can only delete your own products"
+            })
+
+            return
+        }
+
+        await queries.deleteProduct(id)
+        res.status(200).json({
+            message: "Product deleted successfully"
+        })
+    }catch(error){
+        console.error("Error in deleting product:", error)
+        res.status(500).json({ error: "Failed to delete product" })
+    }
+}
