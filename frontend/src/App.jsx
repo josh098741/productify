@@ -6,10 +6,15 @@ import ProductPage from "./pages/ProductPage"
 import EditProfilePage from "./pages/EditProfilePage"
 import CreatePage from "./pages/CreatePage"
 import ProfilePage from "./pages/ProfilePage"
+import useAuthRequest from "./hooks/useAuthRequest"
+import useUserSync from "./hooks/useUserSync"
 
 
 function App() {
+  const {isClerkLoaded,isSignedIn} = useAuthRequest()
+  useUserSync()
 
+  if(!isClerkLoaded) return null
   return (
     <div className="min-h-screen bg-base-100" >
       <Navbar />
