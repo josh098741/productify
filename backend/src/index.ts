@@ -11,7 +11,8 @@ import commentRoutes from "./routes/commentRoutes"
 const app = express()
 
 app.use(cors({
-    origin: ENV.FRONTEND_URL
+    origin: ENV.FRONTEND_URL,
+    credentials: true
 }))
 app.use(clerkMiddleware()) // Auth object will be attached to the request object
 app.use(express.json()); //Parses json request bodies
