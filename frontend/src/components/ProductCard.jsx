@@ -23,7 +23,7 @@ function ProductCard({product}){
             <div className="card-cody p-4" >
                 <h2 className="card-title text-base" >
                     {product.title}
-                    {isNew && <span classname="badge badge-secondary" >NEW</span>}
+                    {isNew && <span className="badge badge-secondary" >NEW</span>}
                 </h2>
                 <p className="text-sm text-base-content/70 line-clamp-2" >{product.description}</p>
                 <div className="divider my-1" ></div>
