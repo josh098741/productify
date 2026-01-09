@@ -4,6 +4,7 @@ import { Link } from "react-router"
 
 import LoadingSpinner from "../components/LoadingSpinner"
 import ProductCard from "../components/ProductCard"
+import { SignInButton } from "@clerk/clerk-react"
 
 
 
@@ -40,10 +41,15 @@ function HomePage(){
                         <p className="py-4 text-base-content/60" >
                             Upload, discover, and connect with creators
                         </p>
-                        <Link to="/create" className="btn btn-primary" >
-                            <SparklesIcon className="size-4" />
-                            Start Selling
-                        </Link>
+                        <SignInButton mode="modal" >
+                            <Link to="/create" >
+                               <button className="btn btn-primary" >
+                                    <SparklesIcon className="size-4" />
+                                    Start Selling
+                                </button> 
+                            </Link>
+                            
+                        </SignInButton>
                     </div>
                 </div>
             </div>
