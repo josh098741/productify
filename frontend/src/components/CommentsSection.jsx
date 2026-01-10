@@ -1,11 +1,11 @@
 
 
 
-function ComponentsSection(){
+function CommentsSection(){
 
     return(
         <div>Components Section</div>
     )
 }
 
-export default ComponentsSection
+export default CommentsSection
