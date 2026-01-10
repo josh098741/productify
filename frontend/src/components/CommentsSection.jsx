@@ -7,9 +7,9 @@ function CommentsSection({ productId, comments=[], currentUserId }){
     const { isSignedIn } = useAuth()
     const [content, setContent] = useState("")
     const createComment = useCreateComment()
-    const deleteComment = useDeleteComment()
+    const deleteComment = useDeleteComment(productId)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
         if(!content.trim()) return
         createComment.mutate({ productId, content }, { onSuccess: () => setContent("") })
