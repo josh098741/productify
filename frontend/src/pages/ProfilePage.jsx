@@ -48,23 +48,23 @@ const ProfilePage = () => {
         </div>
       ) : (
         <div className="grid gap-4">
-          {products.map((product) => (
+          {products?.map((product) => (
             <div key={product.id} className="card card-side bg-base-300">
               <figure className="w-32 shrink-0">
-                <img src={product.imageUrl} alt={product.title} className="h-full object-cover" />
+                <img src={product?.imageUrl} alt={product?.title} className="h-full object-cover" />
               </figure>
               <div className="card-body p-4">
-                <h2 className="card-title text-base">{product.title}</h2>
-                <p className="text-sm text-base-content/60 line-clamp-1">{product.description}</p>
+                <h2 className="card-title text-base">{product?.title}</h2>
+                <p className="text-sm text-base-content/60 line-clamp-1">{product?.description}</p>
                 <div className="card-actions justify-end mt-2">
                   <button
-                    onClick={() => navigate(`/product/${product.id}`)}
+                    onClick={() => navigate(`/product/${product?.id}`)}
                     className="btn btn-ghost btn-xs gap-1"
                   >
                     <EyeIcon className="size-3" /> View
                   </button>
                   <button
-                    onClick={() => navigate(`/edit/${product.id}`)}
+                    onClick={() => navigate(`/edit/${product?.id}`)}
                     className="btn btn-ghost btn-xs gap-1"
                   >
                     <EditIcon className="size-3" /> Edit
@@ -72,7 +72,7 @@ const ProfilePage = () => {
                   <button
                     onClick={() => handleDelete(product.id)}
                     className="btn btn-ghost btn-xs text-error gap-1"
-                    disabled={deleteProduct.isPending}
+                    disabled={deleteProduct?.isPending}
                   >
                     <Trash2Icon className="size-3" /> Delete
                   </button>
