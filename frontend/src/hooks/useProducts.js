@@ -36,4 +36,4 @@ export const useMyProducts = () => {
         queryKey: ["myProducts"],
         queryFn: getMyProducts
     })
-}
+}   
