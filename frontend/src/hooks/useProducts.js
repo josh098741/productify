@@ -24,16 +24,16 @@ export const useProduct = (id) => {
         // double bang operator
     })
 }
-
+         
 export const useDeleteProduct = () => {
     return useMutation({
         mutationFn: deleteProduct
     })
 }
-
+              
 export const useMyProducts = () => {
     return useQuery({
         queryKey: ["myProducts"],
         queryFn: getMyProducts
     })
-}   
+}                     
