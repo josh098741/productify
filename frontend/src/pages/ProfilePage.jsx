@@ -17,8 +17,8 @@ const ProfilePage = () => {
   return (
     <div className="space-y-6">                  
       <div className="flex items-center justify-between">   
-        <div>                              
-          <h1 className="text-2xl font-bold">My Products</h1>         
+        <div>                                          
+          <h1 className="text-2xl font-bold">My Products</h1>                              
           <p className="text-base-content/60 text-sm">Manage your listings</p>        
         </div>            
         <Link to="/create" className="btn btn-primary btn-sm gap-1">           
@@ -26,13 +26,13 @@ const ProfilePage = () => {
         </Link>        
       </div>
       
-      {/* Stats */}        
-      <div className="stats bg-base-300 w-full">        
-        <div className="stat">            
-          <div className="stat-title">Total Products</div>    
-          <div className="stat-value text-primary">{products?.length || 0}</div>
-        </div>
-      </div>
+      {/* Stats */}               
+      <div className="stats bg-base-300 w-full">                             
+        <div className="stat">                                 
+          <div className="stat-title">Total Products</div>                
+          <div className="stat-value text-primary">{products?.length || 0}</div>         
+        </div>                 
+      </div>             
  
       {/* Products */}
       {products?.length === 0 ? (
