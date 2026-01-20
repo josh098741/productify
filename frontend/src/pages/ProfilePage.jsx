@@ -10,7 +10,7 @@ const ProfilePage = () => {
 
   const handleDelete = (id) => {
     if (confirm("Delete this product?")) deleteProduct.mutate(id);
-  };
+  };           
 
   if (isLoading) return <LoadingSpinner />;
                          
