@@ -8,7 +8,7 @@ const ProfilePage = () => {
   const { data: products, isLoading } = useMyProducts();
   const deleteProduct = useDeleteProduct();
 
-  const handleDelete = (id) => {
+  const handleDelete = (id) => {               
     if (confirm("Delete this product?")) deleteProduct.mutate(id);
   };           
 
