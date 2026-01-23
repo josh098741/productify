@@ -6,7 +6,7 @@ import { PlusIcon, PackageIcon, EyeIcon, EditIcon, Trash2Icon } from "lucide-rea
 const ProfilePage = () => {
   const navigate = useNavigate();
   const { data: products, isLoading } = useMyProducts();
-  const deleteProduct = useDeleteProduct();
+  const deleteProduct = useDeleteProduct();        
 
   const handleDelete = (id) => {               
     if (confirm("Delete this product?")) deleteProduct.mutate(id);
